@@ -96,7 +96,7 @@ def transform_calendar(calendar: str) -> str:
     return output.strip()
 
 
-if name == "__main__":
+if __name__ == "__main__":
     try:
         print("Type month")
         month = input()
