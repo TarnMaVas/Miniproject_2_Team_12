@@ -130,3 +130,20 @@ class TestConvertFunctions(unittest.TestCase):
         graph2 = {}
         del_node(graph2, 'A')
         self.assertNotIn('A', graph2)
+
+class TestGraphFunctions(unittest.TestCase):
+    def test_convert_to_dot(self):
+        # Тестовий випадок 1: Порожній файл
+        filename1 = "empty.txt"
+        convert_to_dot(filename1)
+        # Перевірка, чи створено файл з розширенням DOT
+        self.assertTrue(os.path.exists(filename1.replace(".txt", ".DOT")))
+
+        # Тестовий випадок 2: Файл з ребрами
+        filename2 = "data1.txt"
+        convert_to_dot(filename2)
+        # Перевірка, чи створено файл з розширенням DOT
+        self.assertTrue(os.path.exists(filename2.replace(".txt", ".DOT")))
+
+if name == "__main__":
+    unittest.main()
